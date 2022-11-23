@@ -96,7 +96,7 @@ ul {
 
 }
 
-.overlay {
+.herobg-img {
     max-width: 1600px;
     height: 600px;
     margin-right: auto;
@@ -165,12 +165,40 @@ ul {
     margin-left: 93px;
 }
 
-.main-nav .item {
-    margin-right: 50px;
+
+.link-h.link-active::after {
+    opacity: 1;
+
+}
+
+.link-h::after {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+}
+
+.link-h {
+    position: relative;
+}
+
+.link-h:hover::after,
+.link-h:focus::after {
+    opacity: 1;
 }
 
 .main-nav .item:last-child {
     margin-right: 0px;
+}
+
+.main-nav .item {
+    margin-right: 50px;
+
 }
 
 .main-nav .link {
@@ -183,9 +211,11 @@ ul {
     letter-spacing: 0.02em;
     padding-top: 32px;
     padding-bottom: 32px;
+
 }
 
 .link-active {
+    position: relative;
     display: block;
     text-decoration: none;
     color: var(--accent-color);
@@ -195,6 +225,18 @@ ul {
     letter-spacing: 0.02em;
     padding-top: 32px;
     padding-bottom: 32px;
+}
+
+.link-active::after .main-nav .link-header::after:hover,
+.main-nav .link-header::after:focus {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
 }
 
 .link:hover,
@@ -601,4 +643,57 @@ ul {
 .sn-footer:hover,
 .sn-footer:focus {
     background-color: var(--accent-color);
+}
+
+.overlaypf {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.overlaypf-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.itempf:hover .overlaypf,
+.itempf:focus .overlaypf {
+    transform: translate(0);
+}
+
+.overlaypf-text {
+    display: block;
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--secondary-title-color);
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-top: 63px;
+    margin-bottom: 63px;
+
+}
+
+.features-item {
+    position: relative;
+}
+
+.features-text {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--secondary-title-color);
+    background-color: rgba(47, 48, 58, 0.8);
 }
