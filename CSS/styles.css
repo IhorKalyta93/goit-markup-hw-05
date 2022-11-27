@@ -379,6 +379,7 @@ ul {
 .text-footer {
     text-decoration: none;
     color: var(--secondary-title-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     font-style: normal;
     font-size: 14px;
     line-height: 1.7;
@@ -393,9 +394,16 @@ ul {
 .text-footer-contact {
     text-decoration: none;
     color: var(--footer-color-60);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 14px;
     font-style: normal;
     line-height: 1.7;
+}
+
+.text-footer-contact:focus,
+.text-footer-contact:hover,
+.text-foote-contactr-contact:active {
+    color: var(--accent-color);
 }
 
 .portfolio-filter {
